@@ -1,0 +1,50 @@
+{
+  "annealing": {
+    "runs": 30,
+    "independent_random_runs": 30,
+    "evaluations_per_run": 256,
+    "median_score": 2.564507861122,
+    "min_score": 2.564507861122,
+    "max_score": 2.564507861122,
+    "median_gap": 0.0,
+    "oracle_hits": 30,
+    "median_shifted_score": 5.91691335854,
+    "median_accepted_uphill": 27.0
+  },
+  "greedy": {
+    "runs": 30,
+    "independent_random_runs": 30,
+    "evaluations_per_run": 256,
+    "median_score": 2.564507861122,
+    "min_score": 2.564507861122,
+    "max_score": 2.564507861122,
+    "median_gap": 0.0,
+    "oracle_hits": 30,
+    "median_shifted_score": 5.91691335854,
+    "median_accepted_uphill": 0.0
+  },
+  "random": {
+    "runs": 30,
+    "independent_random_runs": 30,
+    "evaluations_per_run": 256,
+    "median_score": 4.219781425802,
+    "min_score": 2.564507861122,
+    "max_score": 8.424814798477,
+    "median_gap": 1.65527356468,
+    "oracle_hits": 5,
+    "median_shifted_score": 7.407426053731,
+    "median_accepted_uphill": 0.0
+  },
+  "grid": {
+    "runs": 30,
+    "independent_random_runs": 0,
+    "evaluations_per_run": 256,
+    "median_score": 3.479834739799,
+    "min_score": 3.479834739799,
+    "max_score": 3.479834739799,
+    "median_gap": 0.915326878677,
+    "oracle_hits": 0,
+    "median_shifted_score": 7.081259461669,
+    "median_accepted_uphill": 0.0
+  }
+}

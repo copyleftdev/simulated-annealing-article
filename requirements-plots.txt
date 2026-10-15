@@ -1,0 +1,3 @@
+# Upstream release matching the recorded distribution build 3.10.7+dfsg1.
+matplotlib==3.10.7
+numpy==2.3.5

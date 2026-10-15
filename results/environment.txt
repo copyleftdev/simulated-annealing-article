@@ -1,0 +1,27 @@
+Recorded environment: 2026-10-15T20:38:11.712838+00:00
+
+OS: Linux-7.0.0-38-generic-x86_64-with-glibc2.43
+
+Architecture: x86_64
+
+Python: 3.14.4
+
+rustc 1.99.0 (b940084d7 2026-09-28)
+binary: rustc
+commit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4
+commit-date: 2026-09-28
+host: x86_64-unknown-linux-gnu
+release: 1.99.0
+LLVM version: 23.1.1
+
+cargo 1.99.0 (5f94df478 2026-08-27)
+
+Build: release, no external Rust dependencies
+
+Search: 256 objective calls per method and seed; seeds 1 through 30
+
+Results: deterministic except elapsed_ns; transcendental floating point portability is conditional
+
+Timing: fixed method order annealing, greedy, random, grid; no isolated performance claim
+
+Plots: Matplotlib 3.10.7+dfsg1, NumPy 2.3.5

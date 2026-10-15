@@ -1,0 +1,8 @@
+/target/
+__pycache__/
+*.pyc
+/dist/
+/.agents/
+/.aws/
+/.codex/
+/.smesh-mcp/

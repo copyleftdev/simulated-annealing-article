@@ -3,6 +3,13 @@
 Status: implementation and numerical evidence checked on October 15, 2026.
 The article's Rust excerpt matches the tested source exactly.
 
+Follow-up validation added mutation campaigns and statistical acceptance checks.
+The current suite has 23 tests, including the original eight described below.
+See [mutation validation](mutation-validation.md) for the full before/after
+campaign and [statistical validation](statistical-validation.md) for one million
+actual-kernel proposals and the predeclared tolerance. The implementation and
+published optimization results did not change.
+
 ## Scope of the evidence
 
 The experiment compares optimizers on a deterministic synthetic objective. Its

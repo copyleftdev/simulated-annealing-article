@@ -25,3 +25,5 @@ Results: deterministic except elapsed_ns; transcendental floating point portabil
 Timing: fixed method order annealing, greedy, random, grid; no isolated performance claim
 
 Plots: Matplotlib 3.10.7+dfsg1, NumPy 2.3.5
+
+Follow-up mutation testing: cargo-mutants 27.0.0; 4 jobs, 10-second test timeout, 60-second build timeout

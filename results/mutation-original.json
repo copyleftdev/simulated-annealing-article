@@ -1,0 +1,1197 @@
+{
+  "suite": "original",
+  "tool": "cargo-mutants",
+  "version": "27.0.0",
+  "scope": "Every mutation generated for src/lib.rs; no exclusions. Only the eight inline library tests run; CLI is not exercised.",
+  "test_timeout_seconds": 10,
+  "build_timeout_seconds": 60,
+  "jobs": 4,
+  "source_sha256": "4390b581ff9be0268144f0f7ddc0560da5204fc52b485a4891d916c331a768df",
+  "counts": {
+    "total_mutants": 181,
+    "caught": 102,
+    "missed": 53,
+    "unviable": 25,
+    "timeout": 1
+  },
+  "baseline": "Success",
+  "mutants": [
+    {
+      "name": "src/lib.rs:22:9: replace Rng::next_u64 -> u64 with 0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:22:9: replace Rng::next_u64 -> u64 with 1",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:22:16: replace ^= with |= in Rng::next_u64",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:22:16: replace ^= with &= in Rng::next_u64",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:22:26: replace >> with << in Rng::next_u64",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:23:16: replace ^= with |= in Rng::next_u64",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:23:16: replace ^= with &= in Rng::next_u64",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:23:26: replace << with >> in Rng::next_u64",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:24:16: replace ^= with |= in Rng::next_u64",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:24:16: replace ^= with &= in Rng::next_u64",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:24:26: replace >> with << in Rng::next_u64",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:29:9: replace Rng::unit -> f64 with 0.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:29:9: replace Rng::unit -> f64 with 1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:29:9: replace Rng::unit -> f64 with -1.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:29:40: replace / with % in Rng::unit",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:29:40: replace / with * in Rng::unit",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:29:26: replace >> with << in Rng::unit",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:29:49: replace << with >> in Rng::unit",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:34:9: replace Rng::below -> u64 with 0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:34:9: replace Rng::below -> u64 with 1",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:35:46: replace % with / in Rng::below",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:35:46: replace % with + in Rng::below",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:39:30: replace % with / in Rng::below",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:39:30: replace % with + in Rng::below",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:54:9: replace Schedule::validate -> Result<(), String> with Ok(())",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:58:13: replace || with && in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:57:13: replace || with && in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:56:13: replace || with && in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:55:13: replace || with && in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:54:12: delete ! in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:55:16: delete ! in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:56:25: replace <= with > in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:57:27: replace < with == in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:57:27: replace < with > in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:57:27: replace < with <= in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:58:33: replace < with == in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation"
+      ]
+    },
+    {
+      "name": "src/lib.rs:58:33: replace < with > in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_zero_seed_and_bad_schedules_before_evaluation",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:58:33: replace < with <= in Schedule::validate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:9: replace Schedule::temperature -> f64 with 0.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls",
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:9: replace Schedule::temperature -> f64 with 1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls",
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:9: replace Schedule::temperature -> f64 with -1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:40: replace / with % in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:40: replace / with * in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:60: replace - with + in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:68:60: replace - with / in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:45: replace + with - in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::retains_best_after_accepting_uphill_and_counts_calls",
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:45: replace + with * in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls",
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:27: replace * with + in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:27: replace * with / in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:15: replace - with + in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:15: replace - with / in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:56: replace * with + in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:69:56: replace * with / in Schedule::temperature",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::retains_best_after_accepting_uphill_and_counts_calls",
+        "tests::schedule_reaches_predeclared_endpoints"
+      ]
+    },
+    {
+      "name": "src/lib.rs:88:5: replace finite -> Result<f64, String> with Ok(0.0)",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_nonfinite_objective_at_initial_or_candidate",
+        "tests::rejects_overflow_in_score_difference",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:88:5: replace finite -> Result<f64, String> with Ok(1.0)",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_nonfinite_objective_at_initial_or_candidate",
+        "tests::rejects_overflow_in_score_difference",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:88:5: replace finite -> Result<f64, String> with Ok(-1.0)",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::rejects_nonfinite_objective_at_initial_or_candidate",
+        "tests::rejects_overflow_in_score_difference",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:104:5: replace anneal -> Result<Outcome<S>, String> with Ok(Outcome::new())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:104:5: replace anneal -> Result<Outcome<S>, String> with Ok(Outcome::from_iter([Default::default()]))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:104:5: replace anneal -> Result<Outcome<S>, String> with Ok(Outcome::new(Default::default()))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:104:5: replace anneal -> Result<Outcome<S>, String> with Ok(Outcome::from(Default::default()))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:115:45: replace - with + in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:115:45: replace - with / in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:118:28: replace += with -= in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:118:28: replace += with *= in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:119:44: replace - with + in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:119:44: replace - with / in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::rejects_overflow_in_score_difference",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:121:25: replace || with && in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:121:18: replace <= with > in anneal",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:121:39: replace < with == in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:121:39: replace < with > in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:121:49: replace / with % in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:121:39: replace < with <= in anneal",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:121:49: replace / with * in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:122:36: replace += with -= in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:121:42: delete - in anneal",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:122:36: replace += with *= in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:122:57: replace > with == in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:122:57: replace > with < in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:122:57: replace > with >= in anneal",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:125:30: replace < with == in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier"
+      ]
+    },
+    {
+      "name": "src/lib.rs:125:30: replace < with > in anneal",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::accepting_an_uphill_step_can_cross_a_tiny_barrier",
+        "tests::retains_best_after_accepting_uphill_and_counts_calls"
+      ]
+    },
+    {
+      "name": "src/lib.rs:125:30: replace < with <= in anneal",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:142:5: replace coordinate -> f64 with 0.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:142:5: replace coordinate -> f64 with 1.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:142:5: replace coordinate -> f64 with -1.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:11: replace + with - in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:11: replace + with * in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:5: delete - in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:38: replace / with % in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:38: replace / with * in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:19: replace * with + in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:55: replace - with + in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:143:19: replace * with / in coordinate",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:143:55: replace - with / in coordinate",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:147:5: replace landscape -> f64 with 0.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:5: replace landscape -> f64 with 1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:5: replace landscape -> f64 with -1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:51: replace - with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:51: replace - with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:26: replace - with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:26: replace - with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:19: replace + with - in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:19: replace + with * in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:11: replace + with - in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:11: replace + with * in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:7: replace * with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:7: replace * with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:15: replace * with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:15: replace * with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:33: replace * with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:33: replace * with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:40: replace * with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:40: replace * with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:58: replace * with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:58: replace * with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:65: replace * with + in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:147:65: replace * with / in landscape",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:151:5: replace training_score -> f64 with 0.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:151:5: replace training_score -> f64 with 1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:151:5: replace training_score -> f64 with -1.0",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:157:5: replace held_out_score -> f64 with 0.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:157:5: replace held_out_score -> f64 with 1.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:157:5: replace held_out_score -> f64 with -1.0",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:160:16: delete - in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:161:20: delete - in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:162:19: replace += with -= in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:162:19: replace += with *= in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:162:34: replace + with - in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:162:34: replace + with * in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:162:42: replace + with - in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:162:42: replace + with * in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:165:11: replace / with % in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:171:5: replace neighbor -> Point with Default::default()",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:165:11: replace / with * in held_out_score",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:24: replace < with == in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:24: replace < with > in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:24: replace < with <= in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:35: replace - with + in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:35: replace - with / in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:53: replace - with + in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:173:53: replace - with / in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:175:23: replace == with != in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:176:27: replace + with - in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:188:5: replace greedy -> Result<Outcome<Point>, String> with Ok(Outcome::new())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:176:27: replace + with * in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:178:17: replace == with != in neighbor",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:188:5: replace greedy -> Result<Outcome<Point>, String> with Ok(Outcome::from_iter([Default::default()]))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:188:5: replace greedy -> Result<Outcome<Point>, String> with Ok(Outcome::new(Default::default()))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:188:5: replace greedy -> Result<Outcome<Point>, String> with Ok(Outcome::from(Default::default()))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:198:28: replace += with -= in greedy",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:198:28: replace += with *= in greedy",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:199:18: replace <= with > in greedy",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:208:5: replace random_search -> Result<Outcome<Point>, String> with Ok(Outcome::new())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:208:5: replace random_search -> Result<Outcome<Point>, String> with Ok(Outcome::from_iter([Default::default()]))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:208:5: replace random_search -> Result<Outcome<Point>, String> with Ok(Outcome::new(Default::default()))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:208:5: replace random_search -> Result<Outcome<Point>, String> with Ok(Outcome::from(Default::default()))",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:218:5: replace grid_search -> Outcome<Point> with Outcome::new()",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:218:5: replace grid_search -> Outcome<Point> with Outcome::from_iter([Default::default()])",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:218:5: replace grid_search -> Outcome<Point> with Outcome::new(Default::default())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:218:5: replace grid_search -> Outcome<Point> with Outcome::from(Default::default())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:218:57: replace / with % in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:218:57: replace / with * in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:218:52: replace + with - in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:218:52: replace + with * in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:218:47: replace * with + in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:218:47: replace * with / in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:229:5: replace best_of -> Outcome<Point> with Outcome::new()",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:229:5: replace best_of -> Outcome<Point> with Outcome::from_iter([Default::default()])",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:223:36: replace != with == in grid_search",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces"
+      ]
+    },
+    {
+      "name": "src/lib.rs:229:5: replace best_of -> Outcome<Point> with Outcome::new(Default::default())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:229:5: replace best_of -> Outcome<Point> with Outcome::from(Default::default())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:237:28: replace += with -= in best_of",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:237:28: replace += with *= in best_of",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:238:18: replace < with == in best_of",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:248:5: replace oracle -> Outcome<Point> with Outcome::new()",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:238:18: replace < with > in best_of",
+      "outcome": "CaughtMutant",
+      "failed_tests": [
+        "tests::all_methods_obey_budget_and_annealing_reproduces",
+        "tests::oracle_matches_separable_one_dimensional_minimum"
+      ]
+    },
+    {
+      "name": "src/lib.rs:238:18: replace < with <= in best_of",
+      "outcome": "MissedMutant",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:248:5: replace oracle -> Outcome<Point> with Outcome::from_iter([Default::default()])",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:248:5: replace oracle -> Outcome<Point> with Outcome::new(Default::default())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:248:5: replace oracle -> Outcome<Point> with Outcome::from(Default::default())",
+      "outcome": "Unviable",
+      "failed_tests": []
+    },
+    {
+      "name": "src/lib.rs:38:22: replace >= with < in Rng::below",
+      "outcome": "Timeout",
+      "failed_tests": []
+    }
+  ],
+  "test_source_sha256": {
+    "src/lib.rs": "4390b581ff9be0268144f0f7ddc0560da5204fc52b485a4891d916c331a768df"
+  }
+}

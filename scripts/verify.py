@@ -2,12 +2,16 @@
 """Independently validate experiment evidence using the Python standard library."""
 
 import argparse
+from collections import Counter
 import csv
+import hashlib
+import json
 import math
 import os
 from pathlib import Path
 import subprocess
 import tempfile
+from acceptance_check import validate as validate_acceptance
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -135,6 +139,23 @@ def reproduce(reference_rows):
     print("PASS: two fresh executions reproduce all committed result fields except elapsed time")
 
 
+def check_mutation_evidence():
+    outcomes = {"CaughtMutant": "caught", "MissedMutant": "missed", "Unviable": "unviable", "Timeout": "timeout"}
+    for suite in ("original", "expanded"):
+        report = json.loads((ROOT / f"results/mutation-{suite}.json").read_text())
+        records = report["mutants"]
+        assert report["baseline"] == "Success"
+        assert len(records) == len({record["name"] for record in records}) == report["counts"]["total_mutants"]
+        counts = Counter(record["outcome"] for record in records)
+        assert set(counts) <= set(outcomes)
+        for status, name in outcomes.items():
+            assert counts[status] == report["counts"][name]
+        assert hashlib.sha256((ROOT / "src/lib.rs").read_bytes()).hexdigest() == report["source_sha256"]
+        for path, expected in report["test_source_sha256"].items():
+            assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected, f"Mutation evidence predates test change: {path}"
+    print("PASS: mutation report counts, unique cases, and tested source hashes")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("csv", nargs="?", type=Path, default=ROOT / "results/raw.csv")
@@ -145,6 +166,9 @@ def main():
     check_neighborhood()
     check_text()
     check_excerpt()
+    validate_acceptance((ROOT / "results/acceptance.csv").read_text())
+    print("PASS: recorded acceptance counts, probabilities, and tolerance")
+    check_mutation_evidence()
     if args.reproduce:
         reproduce(rows)
 

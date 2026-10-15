@@ -205,6 +205,16 @@ There is a second check: after each run selects its best candidate, the harness 
 
 That distinction matters. Thirty seeds describe variation in search outcomes on one fixed problem. They are not thirty independent workloads.
 
+## Try breaking the optimizer
+
+A passing test suite deserves a challenge too. We used [cargo-mutants](https://mutants.rs/) to alter the library and rerun its tests. The original eight Rust tests missed 53 of 181 generated mutations, including deleting the minus sign in the acceptance formula.
+
+After adding acceptance and contract tests, **153 mutations triggered test failures**. Two survived: they permute symmetric terms in the shifted-score average, preserving its mathematical value. Another 25 did not compile, and one caused a nonterminating loop detected by a timeout. We report those categories separately in the [mutation review](https://github.com/copyleftdev/simulated-annealing-article/blob/main/docs/mutation-validation.md).
+
+The statistical check drives the real kernel through **one million uphill proposals** across five predeclared temperatures. At a score difference of 2 and temperature 2, expected acceptance is about 36.79%; observed acceptance was 36.988%. Every case fell within the predeclared tolerance of about 0.635 percentage points.
+
+That tolerance uses a Hoeffding bound under ideal independent random draws. Our fixed pseudorandom streams make this a reproducible regression check, not a certification of randomness. The [statistical review](https://github.com/copyleftdev/simulated-annealing-article/blob/main/docs/statistical-validation.md) records all cases and assumptions. The expanded suite has 23 tests; production optimizer code and benchmark results are unchanged.
+
 ## The optimizer proposes. The testing harness disposes.
 
 A real service adds a complication: measurements fluctuate.

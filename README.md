@@ -53,6 +53,22 @@ The results support a limited but informative conclusion: annealing and greedy b
 
 The setup was chosen before inspecting the result and was not retuned to make annealing win. There is no measured service speedup, agent quality gain, infrastructure saving, or noisy-workload validation in this experiment.
 
+## Challenge the implementation
+
+The expanded Cargo suite contains 23 tests. A full library mutation campaign increased assertion-based detections from 102 to 153 out of 181 generated mutations. Two survivors permute mathematically equivalent terms in the shifted-score average; 25 mutants failed compilation and one timed out. Those categories are reported separately in the [mutation review](docs/mutation-validation.md).
+
+Five predeclared acceptance cases exercise the real kernel with 200,000 uphill proposals each. All five measured rates fall within the declared absolute tolerance of `exp(-2 / T)`. The [statistical review](docs/statistical-validation.md) explains the threshold and the conditional ideal-randomness assumptions. These checks do not certify the pseudorandom generator or prove correctness.
+
+```sh
+python3 scripts/acceptance_check.py
+# Optional mutation tool installation; may require network access.
+cargo install cargo-mutants --version 27.0.0 --locked
+python3 scripts/mutation_check.py --suite original
+python3 scripts/mutation_check.py --suite expanded
+```
+
+The acceptance command runs the tests and regenerates `results/acceptance.csv`. The mutation commands regenerate their complete per-mutant reports in isolated temporary projects. They print outcome counts; successful report generation does not imply every mutant was caught. Full Cargo tests also execute the command-line program against `results/raw.csv`, excluding elapsed time, to protect the published reproducibility contract.
+
 ## Artifacts
 
 | Path | Purpose |
@@ -63,12 +79,19 @@ The setup was chosen before inspecting the result and was not retuned to make an
 | `results/raw.csv` | All 120 search records |
 | `results/summary.md` | Generated descriptive statistics |
 | `results/summary.json` | Machine-readable statistics |
+| `results/acceptance.csv` | Five measured acceptance-rate cases |
+| `results/mutation-*.json` | Complete original and expanded mutation outcomes |
 | `results/environment.txt` | Toolchain and machine context |
 | `assets/*.png`, `assets/*.svg` | Figures generated from the experiment and its objective |
 | `scripts/verify.py` | Independent Python calculation and reproduction checks |
 | `scripts/analyze.py` | Summary, plot, and article block regeneration |
+| `scripts/acceptance_check.py` | Execute and independently check acceptance measurements |
+| `scripts/mutation_check.py` | Run isolated mutation campaigns and record outcomes |
+| `tests/*.rs` | Acceptance and algorithm contract integration tests |
 | `docs/editorial-review.md` | Sourced DEV publishing guidance and claim audit |
 | `docs/validation-review.md` | Independent technical review |
+| `docs/statistical-validation.md` | Acceptance methodology, results, and assumptions |
+| `docs/mutation-validation.md` | Mutation findings and survivor analysis |
 
 The CSV fields include method, seed, objective-call count, selected indices, training score, shifted score, uphill acceptance count, search nanoseconds, oracle score, and gap to the oracle. `elapsed_ns` measures only search execution; it excludes oracle enumeration, shifted evaluation, CSV serialization, compilation, and plotting. Fixed method ordering and a very cheap objective make these timings unsuitable for performance ranking.
 

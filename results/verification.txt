@@ -6,9 +6,9 @@ $ cargo test --locked --offline
 
 running 8 tests
 test tests::accepting_an_uphill_step_can_cross_a_tiny_barrier ... ok
-test tests::rejects_nonfinite_objective_at_initial_or_candidate ... ok
-test tests::rejects_overflow_in_score_difference ... ok
 test tests::rejects_zero_seed_and_bad_schedules_before_evaluation ... ok
+test tests::rejects_overflow_in_score_difference ... ok
+test tests::rejects_nonfinite_objective_at_initial_or_candidate ... ok
 test tests::retains_best_after_accepting_uphill_and_counts_calls ... ok
 test tests::schedule_reaches_predeclared_endpoints ... ok
 test tests::oracle_matches_separable_one_dimensional_minimum ... ok
@@ -21,6 +21,33 @@ test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/acceptance.rs (target/debug/deps/acceptance-139522b822c4fbbb)
+
+running 6 tests
+test best_so_far_survives_later_accepted_regressions ... ok
+test downhill_candidates_always_advance_the_current_state ... ok
+test extremely_cold_search_rejects_every_uphill_candidate ... ok
+test equal_scores_advance_the_current_state_without_erasing_the_first_best ... ok
+test scaling_objective_and_temperature_preserves_the_seeded_path ... ok
+test empirical_uphill_acceptance_matches_predeclared_probabilities ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/algorithm_contracts.rs (target/debug/deps/algorithm_contracts-15d5ad1f2c1059fb)
+
+running 9 tests
+test a_zero_uniform_draw_still_rejects_zero_acceptance_probability ... ok
+test bounded_generator_handles_non_power_of_two_rejection_and_unit_bound ... ok
+test baseline_scores_match_independently_enumerated_reference_values ... ok
+test coordinates_have_exact_domain_and_strictly_increasing_spacing ... ok
+test geometric_cooling_has_correct_interior_and_positive_finite_endpoints ... ok
+test shifted_score_matches_analytic_average_at_asymmetric_points ... ok
+test seeded_generator_matches_independently_calculated_reference_vector ... ok
+test actual_neighbor_reaches_only_the_specified_axis_moves_at_edges_and_interior ... ok
+test executable_reproduces_recorded_experiment_except_timing ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
 
    Doc-tests annealing_proof
 
@@ -38,6 +65,8 @@ PASS: 120 result rows, scores, shifted check, budgets, seeds, and oracle (2.5645
 PASS: independent discrete boundary proposal symmetry check
 PASS: publication and implementation text has no em dash characters
 PASS: article Rust excerpt exactly matches the compiled source
+PASS: recorded acceptance counts, probabilities, and tolerance
+PASS: mutation report counts, unique cases, and tested source hashes
 PASS: 120 result rows, scores, shifted check, budgets, seeds, and oracle (2.564507861122)
 PASS: 120 result rows, scores, shifted check, budgets, seeds, and oracle (2.564507861122)
 PASS: two fresh executions reproduce all committed result fields except elapsed time

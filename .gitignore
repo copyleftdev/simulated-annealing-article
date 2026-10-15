@@ -6,3 +6,5 @@ __pycache__/
 /.aws/
 /.codex/
 /.smesh-mcp/
+/mutants.out/
+/mutants.out.old/
